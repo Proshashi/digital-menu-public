@@ -1,0 +1,92 @@
+@mixin itemStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  position: relative;
+  transition: all ease-in-out 0.5s;
+}
+
+@mixin afterStyle {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  height: 100%;
+  transition: all ease-in-out 0.25s;
+  transition-timing-function: linear;
+  z-index: -1;
+}
+
+@mixin beforeStyle {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  transition: all ease-in-out 0.25s;
+  transition-timing-function: linear;
+  z-index: -1;
+}
+
+.__cus_bNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #f5f5f5;
+  box-shadow: 0.1rem 1rem 5rem #ccc;
+  z-index: 999999 !important;
+
+  &-item {
+    @include itemStyle;
+    border-radius: 5rem !important;
+    overflow: hidden;
+    background-color: #c2444400;
+
+    &::after {
+      @include afterStyle;
+      width: 0%;
+      background-color: #c2444400;
+      opacity: 0;
+    }
+
+    &::before {
+      @include beforeStyle;
+      width: 0%;
+      background-color: #c2444400;
+      opacity: 0;
+    }
+
+    svg {
+      height: 2rem;
+      path {
+        fill: #a17474;
+      }
+    }
+  }
+
+  &-itemActive {
+    color: white;
+    background-color: #c24444;
+
+    &::after {
+      width: 50%;
+      background-color: #c24444;
+      opacity: 1;
+    }
+
+    &::before {
+      width: 50%;
+      background-color: #c24444;
+      opacity: 1;
+    }
+
+    svg path {
+      fill: #fff;
+    }
+  }
+}

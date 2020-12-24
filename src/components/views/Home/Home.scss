@@ -1,0 +1,97 @@
+.__cus_home {
+  overflow: scroll;
+  padding-bottom: 3rem;
+  &-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto, "sans-serif";
+
+    &--logo {
+      margin: 2rem 0 5rem 0;
+    }
+
+    &--name {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+
+    &--address {
+      font-size: 1.8rem;
+      color: $green;
+      margin: 1rem 0 2rem 0;
+      text-align: center;
+    }
+
+    &--greeting {
+      font-size: 2rem;
+      text-align: center;
+      color: $textColor-heading;
+      max-width: 85vw;
+    }
+  }
+}
+
+.__cus_home-carousel {
+  margin: 3rem 0;
+
+  &--card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0.2rem 0.2rem 1rem #ccc;
+    border-radius: 1rem;
+    margin: 1rem 5rem;
+    overflow: hidden;
+    &__image {
+      img {
+        height: 20rem;
+        width: 20rem;
+      }
+      width: 100%;
+      text-align: center;
+      padding: 2rem 0;
+      background-color: #f9f9f9;
+    }
+
+    &__detail {
+      padding: 1.5rem 2rem;
+      font-family: Roboto, "sans-serif";
+      &_title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .name {
+          color: $green;
+          font-weight: bold;
+          font-size: 1.8rem;
+          width: 60%;
+        }
+
+        .price {
+          font-size: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          .price-previous {
+            text-decoration: line-through;
+            color: #97a44c;
+            margin-right: 1rem;
+          }
+
+          .price-discounted {
+            color: #df2a2a;
+          }
+        }
+      }
+
+      &_description {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.swiper-container {
+  padding-bottom: 3rem !important;
+}

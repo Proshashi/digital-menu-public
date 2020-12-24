@@ -1,0 +1,89 @@
+@mixin buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 30px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.__cus_itemDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80vh;
+  height: fit-content;
+  padding-bottom: 8rem;
+  &-image {
+    height: 40vh;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+
+  &-title {
+    font-family: Roboto, "sans-serif";
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: $textColor-heading;
+    margin: 2rem 2rem 1rem 2rem;
+  }
+
+  &-description {
+    font-family: Roboto, "sans-serif";
+    font-size: 1.4rem;
+    color: $brown;
+    margin: 0 2rem;
+  }
+
+  &-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+    &--buttons {
+      display: flex;
+      align-items: center;
+      .subtract {
+        @include buttons();
+        background: #d52828;
+        margin-right: 1rem;
+      }
+
+      .add {
+        @include buttons();
+        background: #d4ce28;
+        margin-left: 1rem;
+      }
+
+      .number {
+        font-size: 1.6rem;
+        font-family: Roboto, "sans-serif";
+      }
+    }
+    &--price {
+      font-family: Roboto, "sans-serif";
+      font-weight: bold;
+      font-size: 2rem;
+      color: #ed1414;
+    }
+  }
+
+  &-cartButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, "sans-serif";
+    background-color: $green;
+    border-radius: 5px;
+    margin: 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+    padding: 1rem 0;
+  }
+}
